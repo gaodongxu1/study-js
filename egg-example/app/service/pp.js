@@ -8,7 +8,10 @@ module.exports = app => {
       return yield app.curl('http://www.sina.com.cn');
     }
     * xuu() {
-      return yield app.cuil('http://www.sina.com.con');
+      return yield app.curl('http://www.sina.com.con');
+    }
+    * dxx() {
+      return yield app.curl('http://www.sina.com.con');
     }
   }
   return Pp;

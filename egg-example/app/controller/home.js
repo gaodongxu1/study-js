@@ -13,14 +13,14 @@ module.exports = app => {
       this.ctx.body = a.data;
     }
     * gao() {
-      const c = yield this.service.pp.ab();
-      this.ctx.body = c.data;
+      this.ctx.body = yield this.service.xueji.delete(this.ctx.request.body);
     }
     * xu() {
-      const d = yield this.service.pp.xuu();
-      this.ctx.body = d;
+      this.ctx.body = yield this.service.xueji.select(this.ctx.request.body);
     }
-
+    * dx() {
+      this.ctx.body = yield this.service.xueji.create(this.ctx.request.body);
+    }
   }
   return HomeController;
 };
