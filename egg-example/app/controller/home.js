@@ -19,7 +19,7 @@ module.exports = app => {
       this.ctx.body = yield this.service.xueji.select(this.ctx.request.body);
     }
     * dx() {
-      this.ctx.body = yield this.service.xueji.create(this.ctx.request.body);
+      this.ctx.body = yield this.service.xueji.createworks(this.ctx.request.body);
     }
   }
   return HomeController;

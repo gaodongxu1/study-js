@@ -28,6 +28,16 @@ module.exports = app => {
         yield app.mysql.delete('user', param);
       } catch (e) {
         this.ctx.logger.error(e);
+        this.ctx.logger.warn();
+        return false;
+      }
+      return true;
+    }
+    * createworks(param) {
+      try {
+        yield app.mysql.insert('works', param);
+      } catch (e) {
+        this.ctx.logger.error(e);
         return false;
       }
       return true;
