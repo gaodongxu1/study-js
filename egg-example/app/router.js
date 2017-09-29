@@ -1,10 +1,12 @@
 'use strict';
 
 module.exports = app => {
-  app.get('/a', 'home.index');
-  app.get('/hi', 'home.a');
-  app.get('/kebe', 'home.nba');
-  app.post('/abc', 'home.gao');
-  app.post('/abcd', 'home.xu');
-  app.post('/qw', 'home.dx');
+  app.post('/user/login', 'user.login');
+  app.post('/user/register', 'user.register');
+
+  app.post('/mobile/set', 'mobile.set');
+  app.post('/mobile/update', 'mobile.update');
+
+  app.post('/works/vote', 'works.vote');
+  app.post('/works/upload', 'works.upload');
 };

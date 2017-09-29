@@ -3,8 +3,55 @@
  */
 'use strict';
 module.exports = app => {
-  class Test extends app.Service {
-    * create(param) {
+  class Xueji extends app.Service {
+    // * login(param) {
+    //   try {
+    //     yield app.mysql.insert('user', param);
+    //   } catch (e) {
+    //     this.ctx.logger.error(e);
+    //     return false;
+    //   }
+    //   return true;
+    // }
+    // * uploadinsert(param) {
+    //   try {
+    //     yield app.mysql.insert('user', param);
+    //   } catch (e) {
+    //     this.ctx.logger.error(e);
+    //     return false;
+    //   }
+    //   return true;
+    // }
+    // * moblie(param) {
+    //   try {
+    //     yield app.mysql.insert('user', param);
+    //   } catch (e) {
+    //     this.ctx.logger.error(e);
+    //     return false;
+    //   }
+    //   return true;
+    // }
+
+    // * vote(param) {
+    //   try {
+    //     yield app.mysql.insert('user', param);
+    //   } catch (e) {
+    //     this.ctx.logger.error(e);
+    //     return false;
+    //   }
+    //   return true;
+    // }
+    // * view(param) {
+    //   try {
+    //     yield app.mysql.select('user', param);
+    //   } catch (e) {
+    //     this.ctx.logger.error(e);
+    //     return false;
+    //   }
+    //   return true;
+    // }
+
+    * usercreate(param) {
       try {
         yield app.mysql.insert('user', param);
       } catch (e) {
@@ -13,7 +60,7 @@ module.exports = app => {
       }
       return true;
     }
-    * select() {
+    * userselect() {
       let res;
       try {
         res = yield app.mysql.select('user');
@@ -23,7 +70,7 @@ module.exports = app => {
       }
       return res;
     }
-    * delete(param) {
+    * userdelete(param) {
       try {
         yield app.mysql.delete('user', param);
       } catch (e) {
@@ -33,7 +80,7 @@ module.exports = app => {
       }
       return true;
     }
-    * createworks(param) {
+    * workscreate(param) {
       try {
         yield app.mysql.insert('works', param);
       } catch (e) {
@@ -43,6 +90,6 @@ module.exports = app => {
       return true;
     }
   }
-  return Test;
+  return Xueji;
 };
 
