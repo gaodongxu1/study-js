@@ -1,7 +1,7 @@
 
   <view>
-   <view> <text>姓名:高东旭</text></view>
-    <view> <text>性别:男</text></view>
+   <view class="sex"> <text class="name">姓名:高东旭</text></view>
+    <view class="sex"> <text>性别:男</text></view>
     <text>年龄:{{age}}</text>
     <view><text>籍贯:重庆市云阳县</text></view>
     <view><text>入学时间:2014年9月</text></view>
@@ -26,15 +26,15 @@
 </view>
 <view>
   <view>{{year}}年{{month}}月{{day}}日</view>
-  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="date">
     <picker-view-column>
-      <view  wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+      <view  wx:for="{{years}}">{{item}}年</view>
     </picker-view-column>
     <picker-view-column>
-      <view  wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+      <view  wx:for="{{months}}">{{item}}月</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+      <view wx:for="{{days}}">{{item}}日</view>
     </picker-view-column>
   </picker-view>
 </view>
@@ -69,5 +69,18 @@
   <view class="body-view">
     <slider bindchange="slider4change" min="0" max="200" show-value/>
   </view>
+</view>
+<view class="container">
+    <video src="{{video}}"/>
+    <button bindtap="vedio" class="button-video">获取视频</button>
+</view>
+<audio src="{{src}}" id="myAudio"/>
+<button type="primary" bindtap="audioPlay">播放</button>
+<button type="primary" bindtap="audioPause">暂停</button>
+<button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+<button type="primary" bindtap="audioStart">回到开头</button>
+<view class="container">
+    <image src="{{image}}"/>
+    <button bindtap="image">获取图片</button>
 </view>
   </view>
