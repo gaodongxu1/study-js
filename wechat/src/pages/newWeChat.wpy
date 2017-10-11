@@ -1,15 +1,16 @@
 <style lang="less">
-.background { 
+.background {
   margin: 1px 5px;
   height: 80px;
   width: 80px;
   margin: 3px 8px 5px 10px;
   background-color: lightpink
 }
+
 .line {
-   height:1px;
-   width: 36px;
-   background-color: black;
+  height: 1px;
+  width: 36px;
+  background-color: black;
 }
 
 .topic {
@@ -20,30 +21,31 @@
   font-size: 20px;
   color: brown;
 }
+
 .round {
   width: 36px;
   height: 36px;
   background-color: grey;
-  border-radius: 50% 
-  
+  border-radius: 50%
 }
+
 .gifticon {
   width: 36px;
   height: 36px;
   background-color: grey;
-  margin: 3px 3px 2px 10px;
+  margin: 12px 3px 2px 5px;
 }
+
 .select {
   justify-content: center;
   margin: 10px 8px 10px 10px;
   font-size: 15px;
-  color:goldenrod;
+  color: goldenrod;
 }
 
-.send {
-  margin: 37px 8px 1px 10px;
+.button-send {
+  margin: 38px 8px 1px 10px;
   font-size: 20px;
-  color:grey;
 }
 
 .friend {
@@ -61,6 +63,7 @@
   font-size: 13px;
   color: black;
 }
+
 .image {
   display: flex;
   flex-direction: row;
@@ -68,6 +71,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .the-page-layout {
   position: fixed;
   bottom: 0;
@@ -98,9 +102,9 @@
         <text class="select">完成</text>
       </view>
     </view>
-    <view class="send">
-      <text class="send">送她</text>
-      <text class="send">送他</text>
+    <view class="button-send">
+      <text @tap="she" class="button-send" style="color:{{colorshe}}; border-bottom: 3px solid {{solidshe}}">送她</text>
+      <text @tap="he" class="button-send" style="color:{{color}}; border-bottom: 3px solid {{solidhe}}" solid-bottom="solidhe">送他</text>
     </view>
     <view class="friend">
       <view class="background">
@@ -111,23 +115,23 @@
       </view>
       <view class="background">
         <view class="image">
-          <image class="gifticon" src="{{girlfriend}}" />
+          <image class="gifticon" src="{{sisters}}" />
         </view>
-        <text class="friend">老婆/女票</text>
+        <text class="friend">{{wifes}}</text>
       </view>
       <view class="background">
         <view class="image">
-          <image class="gifticon" src="{{friend}}" />
+          <image class="gifticon" src="{{wifess}}" />
         </view>
-        <text class="friend">姐妹/闺蜜</text>
+        <text class="friend">{{sister}}</text>
       </view>
     </view>
     <view class="relative">
       <view class="background ">
         <view class="image">
-          <image class="gifticon" src="{{mother}}" />
+          <image class="gifticon" src="{{moms}}" />
         </view>
-        <text class="relative">妈妈</text>
+        <text class="relative">{{mom}}</text>
       </view>
       <view class="background ">
         <view class="image">
@@ -142,8 +146,8 @@
         <text class="relative">同事</text>
       </view>
     </view>
-    <text class="the-page-layout">先跳过这里，随便逛逛  ＞</text>
-      </view>
+    <text @tap="Return" class="the-page-layout">先跳过这里，随便逛逛 ＞</text>
+  </view>
 
   </view>
 </template>
@@ -155,7 +159,7 @@ export default class Index extends wepy.page {
   }
 
   data = {
-    src: '',
+    // src: '',
     give: '../photo/4.jpg',
     like: '../photo/1.png',
     right: '../photo/2.jpg',
@@ -164,10 +168,48 @@ export default class Index extends wepy.page {
     friend: '../photo/friend.jpg',
     mother: '../photo/mother.jpg',
     elders: '../photo/elders.jpg',
-    colleagues: '../photo/colleagues.jpg'
+    colleagues: '../photo/colleagues.jpg',
+    father: '../photo/father.jpg',
+    boy: '../photo/boy.jpg',
+    husbands: '../photo/husbands.jpg',
+    wifes: '老婆/女票',
+    sister: '姐妹/闺蜜',
+    mom: '妈妈',
+    wifess: '../photo/friend.jpg',
+    sisters: '../photo/girlfriend.jpg',
+    moms: '../photo/mother.jpg',
+    color: '',
+    colorshe: 'red',
+    solidshe: 'red',
+    solidhe: 'white'
   }
   methods = {
-
+    she() {
+      let self = this
+      self.color = 'black'
+      self.colorshe = 'red'
+      self.solidshe = 'red'
+      self.solidhe = 'white'
+      self.wifes = '老婆/女票'
+      self.sister = '姐妹/闺蜜'
+      self.mom = '妈妈'
+      self.wifess = '../photo/friend.jpg'
+      self.sisters = '../photo/girlfriend.jpg'
+      self.moms = '../photo/mother.jpg'
+    },
+    he() {
+      let self = this
+      self.color = 'red'
+      self.colorshe = 'black'
+      self.solidshe = 'white'
+      self.solidhe = 'red'
+      self.wifes = '老公/男票'
+      self.sister = '兄弟/基友'
+      self.mom = '爸爸'
+      self.moms = '../photo/father.jpg'
+      self.wifess = '../photo/boy.jpg'
+      self.sisters = '../photo/husbands.jpg'
+    }
   }
   onLoad() { }
 }

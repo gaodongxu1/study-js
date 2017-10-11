@@ -1,0 +1,65 @@
+
+  <view class="topic">
+    <view>
+      <text>简单2步，选中心动好礼</text>
+    </view>
+    <view class="topic">
+      <view class="image">
+        <image class="round" src="{{give}}"/>
+        <text class="line"/>
+        <image class="round" src="{{like}}"/>
+        <text class="line"/>
+        <image class="round" src="{{right}}"/>
+      </view>
+      <view>
+        <text class="select">送给TA</text>
+        <text class="select">TA喜欢的</text>
+        <text class="select">完成</text>
+      </view>
+    </view>
+    <view class="button-send">
+      <text bindtap="she" class="button-send" style="color:{{colorshe}}; border-bottom: 3px solid {{solidshe}}">送她</text>
+      <text bindtap="he" class="button-send" style="color:{{color}}; border-bottom: 3px solid {{solidhe}}" solid-bottom="solidhe">送他</text>
+    </view>
+    <view class="friend">
+      <view class="background">
+        <view class="image">
+          <image class="gifticon" src="{{myself}}"/>
+        </view>
+        <text class="friend">自己</text>
+      </view>
+      <view class="background">
+        <view class="image">
+          <image class="gifticon" src="{{sisters}}"/>
+        </view>
+        <text class="friend">{{wifes}}</text>
+      </view>
+      <view class="background">
+        <view class="image">
+          <image class="gifticon" src="{{wifess}}"/>
+        </view>
+        <text class="friend">{{sister}}</text>
+      </view>
+    </view>
+    <view class="relative">
+      <view class="background ">
+        <view class="image">
+          <image class="gifticon" src="{{moms}}"/>
+        </view>
+        <text class="relative">{{mom}}</text>
+      </view>
+      <view class="background ">
+        <view class="image">
+          <image class="gifticon" src="{{elders}}"/>
+        </view>
+        <text class="relative">长辈</text>
+      </view>
+      <view class="background ">
+        <view class="image">
+          <image class="gifticon" src="{{colleagues}}"/>
+        </view>
+        <text class="relative">同事</text>
+      </view>
+    </view>
+    <text bindtap="Return" class="the-page-layout">先跳过这里，随便逛逛 ＞</text>
+  </view>
