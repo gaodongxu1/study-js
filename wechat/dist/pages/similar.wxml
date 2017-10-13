@@ -1,0 +1,8 @@
+
+<view>
+  <view class="search-image"><image class="image-round" src="{{search}}"/>
+  </view>
+  <view>
+  <input class="search" placeholder="点击搜索" auto-focus/>
+  </view>
+</view>

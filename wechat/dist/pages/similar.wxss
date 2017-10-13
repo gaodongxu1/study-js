@@ -1,0 +1,1 @@
+.search{border-bottom-left-radius:20px;font-size:15px;color:black}.search-image{display:flex;flex-direction:column;border-radius:50%}.image-round{width:36px;height:36px;background-color:grey;border-radius:50%}

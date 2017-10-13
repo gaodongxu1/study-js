@@ -1,0 +1,47 @@
+<style lang='less'>
+.search {
+  border-bottom-left-radius: 20px;
+  font-size: 15px;
+  color: black;
+}
+.search-image {
+  display: flex;
+  flex-direction:column;
+  border-radius: 50%;
+  // justify-content: center;
+  // align-items: center;
+}
+.image-round {
+  width: 36px;
+  height: 36px;
+  background-color: grey;
+  border-radius: 50%
+}
+</style>
+<template>
+<view>
+  <view class="search-image"><image class="image-round" src="{{search}}" />
+  </view>
+  <view >
+  <input class="search" placeholder="点击搜索" auto-focus/>
+  </view>
+</view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '爱车族'
+  }
+  data = {
+    search: '../photo/search.jpg'
+
+  }
+  methods = {
+
+  }
+  onload () {
+
+  }
+}
+</script>
